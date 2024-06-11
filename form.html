@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+    <style>
+        .form-container {
+            width: 100%;
+            /* 容器宽度占满其父元素 */
+            max-width: 600px;
+            /* 最大宽度，防止在大屏幕上过宽 */
+            margin: 0 auto;
+            /* 上下边距为0，左右自动，实现水平居中 */
+        }
+
+        /* 表单样式 */
+        .form {
+            border: 2px dashed #dfdfdf;
+            /* 虚线边框 */
+            padding: 20px;
+            /* 内边距 */
+            background-color: #ffffff;
+            /* 背景色 */
+            width: 300px;
+            /* 表单宽度，根据需要调整 */
+            margin: auto;
+            /* 使表单在父容器中水平居中 */
+            text-align: left;
+            /* 使表单内的内联元素水平居中 */
+        }
+
+        /* 表单内的按钮样式 */
+        .form input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            /* 按钮与表单其他元素的间隔，上下边距，左右自动 */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="form-container">
+        <form class="form" action="/" method="post">
+            <label for="name">昵称:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="name">邮箱:</label>
+            <input type="text" id="mail" name="mail" required>
+
+            <select id="com" name="com">
+                <option value="qq">qq.com</option>
+                <option value="gmail">gmail.com</option>
+                <option value="163">163.com</option>
+            </select><br>
+
+            <label>性别:</label>
+            <input type="radio" id="male" name="gender" value="male" checked>
+            <label for="male">男</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">女</label><br>
+
+            <label>爱好:</label>
+            <input type="checkbox" name="vehicle" value="Bike">旅游
+            <input type="checkbox" name="vehicle" value="Car">摄影
+            <input type="checkbox" name="vehicle" value="Car">运动<br>
+
+            <label>个人简介:</label><br>
+            <textarea rows="10" cols="30">
+        </textarea><br>
+
+            <label>上传个人照片</label><br>
+            <input type="file" id="fileUpload" name="fileUpload" accept="image/" value="上传个人照片"><br>
+
+            <hr>
+
+            <input type="submit" value="立刻注册">
+        </form>
+    </div>
+</body>
+
+</html>
