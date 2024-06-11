@@ -4,9 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>resume</title>
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .head {
+            background-color: lightgrey;
+            height: 80px;
+        }
+
+        .img {
+            transition: opacity 0.5s;
+            opacity: 1;
+        }
+
+        .img:hover {
+            opacity: 0.7;
+        }
+
+        a {
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #0056b3;
+            background-color: #f0f0f048;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                width: 90%;
+                max-width: 960px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .left {
+                height: auto;
+            }
+
+            .form-container {
+                padding: 10px;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .form {
+                width: 100%;
+            }
+        }
+
+        .content {
+            background-color: #f5f5f5;
+        }
+
+        .footer {
+            background-color: #adadad;
+            height: 80px;
+            margin-top: 10px;
+            clear: both;
+        }
+
+        .head>.container {
+            background-color: #242424;
+            height: 80px;
+        }
+
+        .footer>.container {
+            background-color: #242424;
+            height: 80px;
+        }
+
+        .left {
+            width: 960px;
+            background-color: rgb(135, 177, 222);
+            float: initial;
+            height: 976px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
         .form-container {
             width: 100%;
             /* 容器宽度占满其父元素 */
@@ -63,62 +151,79 @@
         }
     </style>
 
+
 </head>
 
 <body>
+    <div class="head">
+        <div class="container"></div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="left">
 
-    <div class="form-container">
-        <h1 class="text">姓名：顾隽扬</h1>
-        <img src="img/0f5be6f321106e9f08d4275359feceb.png" width="200px" class="img">
-        <h4 class="text"><a href="form.html">表单</a></h4>
-        <hr>
-        <ul class="background">
-            <li>
-                <b>性别：</b>男
-            </li>
-            <li>
-                <b>电话：</b>17740807967
-            </li>
-            <li>
-                <b>邮箱：</b>2848159634@qq.com
-            </li>
-            <li>
-                <b>生日：</b>2003.9.6
-            </li>
-            <li>
-                <b>兴趣：</b>Basketball
-            </li>
-        </ul>
-        <hr>
-        <h3 class="text">教育背景Education</h3>
-        <table style="width:100%" border=1 cellspacing=0 class="background">
-            <tr>
-                <th>时间</th>
-                <th>学校</th>
-                <th>学历</th>
-            </tr>
-            <tr>
-                <td>2022-至今</td>
-                <td>上海对外经贸大学</td>
-                <td>本科</td>
-            </tr>
-            <tr>
-                <td>2019-2022</td>
-                <td>徐汇中学</td>
-                <td>高中</td>
-            </tr>
-        </table>
-        <hr>
-        <h3 class="text">工作经验</h3>
-        <ol class="background">
-            <li>XXX公司研发部实习生</li>
+                <div class="form-container">
+                    <h1 class="text">姓名：顾隽扬</h1>
+                    <img src="img/0f5be6f321106e9f08d4275359feceb.png" width="200px" class="img">
+                    <h4 class="text"><a href="form.html">表单</a></h4>
+                    <hr>
+                    <ul class="background">
+                        <li>
+                            <b>性别：</b>男
+                        </li>
+                        <li>
+                            <b>电话：</b>17740807967
+                        </li>
+                        <li>
+                            <b>邮箱：</b>2848159634@qq.com
+                        </li>
+                        <li>
+                            <b>生日：</b>2003.9.6
+                        </li>
+                        <li>
+                            <b>兴趣：</b>Basketball
+                        </li>
+                    </ul>
+                    <hr>
+                    <h3 class="text">教育背景Education</h3>
+                    <table style="width:100%" border=1 cellspacing=0 class="background">
+                        <tr>
+                            <th>时间</th>
+                            <th>学校</th>
+                            <th>学历</th>
+                        </tr>
+                        <tr>
+                            <td>2022-至今</td>
+                            <td>上海对外经贸大学</td>
+                            <td>本科</td>
+                        </tr>
+                        <tr>
+                            <td>2019-2022</td>
+                            <td>徐汇中学</td>
+                            <td>高中</td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <h3 class="text">工作经验</h3>
+                    <ol class="background">
+                        <li>XXX公司研发部实习生</li>
 
-        </ol>
-        <hr>
-        <h3 class="text">技能水平</h3>
-        <p class="background">1、四级576分<br>
-            2、C语言编程83分<br>
-            3、Clementine数据分析95分<br></p>
+                    </ol>
+                    <hr>
+                    <h3 class="text">技能水平</h3>
+                    <p class="background">1、四级576分<br>
+                        2、C语言编程83分<br>
+                        3、Clementine数据分析95分<br></p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="container"></div>
     </div>
 </body>
 
