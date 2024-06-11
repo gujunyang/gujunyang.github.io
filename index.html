@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resume</title>
+
+    <style>
+        .form-container {
+            width: 100%;
+            /* 容器宽度占满其父元素 */
+            max-width: 800px;
+            /* 最大宽度，防止在大屏幕上过宽 */
+            margin: 0 auto;
+            /* 上下边距为0，左右自动，实现水平居中 */
+            border: 2px dashed #dfdfdf;
+            /* 虚线边框 */
+            padding: 20px;
+            /* 内边距 */
+            background-color: aliceblue;
+        }
+
+        /* 表单样式 */
+        .form {
+            border: 2px dashed #dfdfdf;
+            /* 虚线边框 */
+            padding: 20px;
+            /* 内边距 */
+            background-color: #ffffff;
+            /* 背景色 */
+            width: 300px;
+            /* 表单宽度，根据需要调整 */
+            margin: auto;
+            /* 使表单在父容器中水平居中 */
+            text-align: left;
+            /* 使表单内的内联元素水平居中 */
+        }
+
+        /* 表单内的按钮样式 */
+        .form input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            /* 按钮与表单其他元素的间隔，上下边距，左右自动 */
+        }
+
+        .text {
+            color: rgb(72, 83, 94);
+            text-align: center;
+            vertical-align: baseline;
+            font-family: -apple-system;
+        }
+
+        img {
+            display: block;
+            /* 使图片成为块级元素 */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .background {
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1 class="text">姓名：顾隽扬</h1>
+        <img src="img/0f5be6f321106e9f08d4275359feceb.png" width="200px" class="img">
+        <h4 class="text"><a href="form.html">表单</a></h4>
+        <hr>
+        <ul class="background">
+            <li>
+                <b>性别：</b>男
+            </li>
+            <li>
+                <b>电话：</b>17740807967
+            </li>
+            <li>
+                <b>邮箱：</b>2848159634@qq.com
+            </li>
+            <li>
+                <b>生日：</b>2003.9.6
+            </li>
+            <li>
+                <b>兴趣：</b>Basketball
+            </li>
+        </ul>
+        <hr>
+        <h3 class="text">教育背景Education</h3>
+        <table style="width:100%" border=1 cellspacing=0 class="background">
+            <tr>
+                <th>时间</th>
+                <th>学校</th>
+                <th>学历</th>
+            </tr>
+            <tr>
+                <td>2022-至今</td>
+                <td>上海对外经贸大学</td>
+                <td>本科</td>
+            </tr>
+            <tr>
+                <td>2019-2022</td>
+                <td>徐汇中学</td>
+                <td>高中</td>
+            </tr>
+        </table>
+        <hr>
+        <h3 class="text">工作经验</h3>
+        <ol class="background">
+            <li>XXX公司研发部实习生</li>
+
+        </ol>
+        <hr>
+        <h3 class="text">技能水平</h3>
+        <p class="background">1、四级576分<br>
+            2、C语言编程83分<br>
+            3、Clementine数据分析95分<br></p>
+    </div>
+</body>
+
+</html>
