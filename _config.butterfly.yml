@@ -263,12 +263,52 @@ footer:
   nav:
   owner:
     enable: true
-    since: 2025
+    since: 2024
   # Copyright of theme and framework
   copyright:
     enable: true
-    version: true
-  custom_text:
+    version: false
+  custom_text: |
+    <div class="footer-decor">
+      <div class="footer-runtime">本站已经运行了 <span id="footer-runtime-time">0 天 00 小时 00 分 00 秒</span> <span class="footer-runtime-heart">❤</span></div>
+      <div class="footer-badges">
+        <a class="footer-badge" target="_blank" rel="noopener" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" alt="Frame Hexo" /></a>
+        <a class="footer-badge" target="_blank" rel="noopener" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" alt="Theme Butterfly" /></a>
+        <a class="footer-badge" target="_blank" rel="noopener" href="https://github.com/gujunyang/gujunyang.github.io"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=github" alt="Source Github" /></a>
+        <a class="footer-badge" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=creativecommons" alt="Copyright BY-NC-SA 4.0" /></a>
+        <!-- 如需萌ICP备徽章：把下面的注释取消，并替换成你自己的备案号 -->
+        <!-- <a class="footer-badge" target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20240460"><img src="https://img.shields.io/badge/%E8%90%8CICP%E5%A4%87-20240460-fe1384?style=flat" alt="萌ICP备" /></a> -->
+      </div>
+    </div>
+    <style>
+      .footer-decor{margin-top:10px;line-height:2}
+      .footer-runtime{margin-bottom:8px}
+      .footer-runtime-heart{color:#ff6b81}
+      #footer-runtime-time{color:#ff7f50;font-weight:600}
+      .footer-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+      .footer-badge{display:inline-flex;transition:transform .2s}
+      .footer-badge:hover{transform:translateY(-2px)}
+      .footer-badge img{height:20px;display:block}
+    </style>
+    <script>
+      (function () {
+        var LAUNCH = new Date('2024-06-11T23:52:00+08:00');
+        function pad(n) { return n < 10 ? '0' + n : '' + n; }
+        function tick() {
+          var el = document.getElementById('footer-runtime-time');
+          if (!el) return;
+          var diff = Date.now() - LAUNCH.getTime();
+          if (diff < 0) diff = 0;
+          var d = Math.floor(diff / 86400000);
+          var h = Math.floor(diff / 3600000) % 24;
+          var m = Math.floor(diff / 60000) % 60;
+          var s = Math.floor(diff / 1000) % 60;
+          el.textContent = d + ' 天 ' + pad(h) + ' 小时 ' + pad(m) + ' 分 ' + pad(s) + ' 秒';
+        }
+        tick();
+        setInterval(tick, 1000);
+      })();
+    </script>
 
 # --------------------------------------
 # Aside Settings
