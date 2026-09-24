@@ -67,10 +67,10 @@ avatar:
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img: /img/wallpaper.svg
+default_top_img: /img/banner.jpg
 
 # The banner image of index page
-index_img: /img/wallpaper.svg
+index_img: /img/banner.jpg
 
 # The banner image of archive page
 archive_img:
@@ -98,6 +98,12 @@ footer_img: false
 # Can set it to color, image URL or an array containing colors and/or image URLs
 # If an array is provided, a random background will be selected from the array on each load
 background:
+  - /img/bg1.jpg
+  - /img/bg2.jpg
+  - /img/bg3.jpg
+  - /img/bg4.jpg
+  - /img/bg5.jpg
+  - /img/bg6.jpg
 
 cover:
   # Disable the cover or not

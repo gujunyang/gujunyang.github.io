@@ -5,7 +5,7 @@ tags:
   - Hexo
 categories:
   - 博客
-cover: /img/wallpaper.svg
+cover: /img/banner.jpg
 description: 使用 Hexo + Butterfly 搭建的个人博客，记录学习与生活的点滴。
 swiper_index: 1
 ---
