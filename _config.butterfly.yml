@@ -67,10 +67,10 @@ avatar:
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img:
+default_top_img: /img/wallpaper.svg
 
 # The banner image of index page
-index_img:
+index_img: /img/wallpaper.svg
 
 # The banner image of archive page
 archive_img:
@@ -153,7 +153,7 @@ index_top_img_height:
 
 # The subtitle on homepage
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect
   effect: true
   # Customize typed.js
@@ -169,6 +169,7 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
+    - 为天地立心，为生民立命，为往圣继绝学，为万世开太平
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -888,7 +889,7 @@ hr_icon:
 # Typewriter Effect
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false
+  enable: true
   colorful: true
   shake: true
   mobile: false
@@ -910,7 +911,7 @@ canvas_ribbon:
 
 # Fluttering Ribbon
 canvas_fluttering_ribbon:
-  enable: false
+  enable: true
   mobile: false
 
 # canvas_nest
@@ -929,7 +930,7 @@ canvas_nest:
 
 # Mouse click effects: fireworks
 fireworks:
-  enable: false
+  enable: true
   zIndex: 9999
   mobile: false
 
@@ -1103,7 +1104,8 @@ inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
-    # - <script src="xxxx"></script>
+    - '<script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>'
+    - '<script>L2Dwidget.init({"model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script>'
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work
@@ -1174,3 +1176,69 @@ CDN:
     # valine:
     # waline_css:
     # waline_js:
+
+# ======================================
+# Third-party plugins
+# ======================================
+
+# hexo-butterfly-swiper (首页轮播图)
+# see https://akilar.top/posts/8e1264d1/
+swiper:
+  enable: true
+  priority: 5
+  enable_page: /
+  exclude:
+  timemode: date
+  layout:
+    type: id
+    name: recent-posts
+    index: 0
+  error_img: /img/404.jpg
+  insertposition: afterbegin
+  default_descr: 再怎么看我也不知道怎么描述它的啦！
+  swiper_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper@1.0.12/lib/swiper.min.css
+  swiper_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper@1.0.12/lib/swiper.min.js
+  custom_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper@1.0.12/lib/swiperstyle.css
+  custom_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper@1.0.12/lib/swiper_init.js
+
+# hexo-butterfly-clock-anzhiyu (侧边栏电子钟)
+# see https://anzhiy.cn/posts/fc18.html
+electric_clock:
+  enable: true
+  priority: 5
+  enable_page: all
+  exclude:
+  layout:
+    type: class
+    name: sticky_layout
+    index: 0
+  loading: https://cdn.jsdelivr.net/npm/hexo-butterfly-clock-anzhiyu@1.1.9/lib/loading.gif
+  clock_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-clock-anzhiyu@1.1.9/lib/clock.min.css
+  clock_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-clock-anzhiyu@1.1.9/lib/clock.min.js
+  # 建议自行申请和风天气 / IP 定位 key，留空则使用插件默认值
+  qweather_key:
+  qweather_api_host:
+  ip_api_key:
+  gaud_map_key:
+  default_rectangle: false
+  rectangle:
+
+# hexo-butterfly-wowjs (入场动画)
+# see https://akilar.top/posts/abab51cf/
+wowjs:
+  enable: true
+  priority: 10
+  mobile: false
+  animateitem:
+    - class: recent-post-item
+      style: animate__zoomIn
+      duration: 1.5s
+      delay: 200ms
+      offset: 30
+      iteration: 1
+    - class: card-widget
+      style: animate__zoomIn
+      delay: 200ms
+  animate_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-wowjs@1.0.5/lib/animate.min.css
+  wow_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-wowjs@1.0.5/lib/wow.min.js
+  wow_init_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-wowjs@1.0.5/lib/wow_init.js
