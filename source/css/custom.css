@@ -13,7 +13,7 @@
 #footer .footer-runtime,
 #footer #footer-runtime-time,
 #footer .footer-runtime-heart {
-  color: #21618c;
+  color: #21618c !important;
 }
 
 #footer a {
@@ -34,5 +34,5 @@
 [data-theme='dark'] #footer .footer-runtime,
 [data-theme='dark'] #footer #footer-runtime-time,
 [data-theme='dark'] #footer .footer-runtime-heart {
-  color: #7ec6ef;
+  color: #7ec6ef !important;
 }
