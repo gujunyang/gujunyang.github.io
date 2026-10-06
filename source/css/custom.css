@@ -7,11 +7,32 @@
   box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.06);
 }
 
-#footer > * {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+/* 页脚文字 - 主题蓝系深色，与蓝色玻璃协调不突兀 */
+#footer > *,
+#footer a,
+#footer .footer-runtime,
+#footer #footer-runtime-time,
+#footer .footer-runtime-heart {
+  color: #21618c;
+}
+
+#footer a {
+  transition: color .3s ease-in-out;
+}
+
+#footer a:hover {
+  color: #49b1f5;
 }
 
 [data-theme='dark'] #footer {
   background-color: rgba(22, 26, 33, 0.5) !important;
   border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme='dark'] #footer > *,
+[data-theme='dark'] #footer a,
+[data-theme='dark'] #footer .footer-runtime,
+[data-theme='dark'] #footer #footer-runtime-time,
+[data-theme='dark'] #footer .footer-runtime-heart {
+  color: #7ec6ef;
 }
