@@ -1109,6 +1109,8 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    # 自定义样式（页脚玻璃效果等）
+    - <link rel="stylesheet" href="/css/custom.css">
     # 音乐播放器 APlayer 样式（本地自托管）
     - <link rel="stylesheet" href="/lib/aplayer/APlayer.min.css">
   bottom:
