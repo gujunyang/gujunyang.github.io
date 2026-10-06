@@ -1109,11 +1109,11 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
-    # 音乐播放器 APlayer 样式
-    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+    # 音乐播放器 APlayer 样式（本地自托管）
+    - <link rel="stylesheet" href="/lib/aplayer/APlayer.min.css">
   bottom:
     # 音乐播放器（自动播放 source/music/ 目录下的音频）
-    - <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    - <script src="/lib/aplayer/APlayer.min.js"></script>
     - <script src="/js/music-player.js"></script>
     # 看板娘（暂时关闭，需要时取消注释即可）
     # - '<script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>'
