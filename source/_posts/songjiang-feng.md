@@ -5,7 +5,7 @@ tags:
   - 随笔
 categories:
   - 随笔
-cover: /img/banner.jpg
+cover: /img/first_blog封面.jpg
 description: 松江的风吹过香樟树的叶子，在一束斜落的光里，记下漂着的日子。
 swiper_index: 1
 ---
