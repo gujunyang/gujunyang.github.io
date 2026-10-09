@@ -404,6 +404,9 @@
     var aside = document.getElementById('aside-content')
     if (!aside) return
 
+    // 文章页保留主题自带的目录卡片，仅替换其余卡片
+    var toc = aside.querySelector('#card-toc')
+
     aside.innerHTML = ''
     aside.appendChild(navCard())
 
@@ -413,6 +416,13 @@
     refreshWeather(weather).catch(function () {/* keep placeholders */})
 
     aside.appendChild(calendarCard())
+
+    if (toc) {
+      var tocSticky = document.createElement('div')
+      tocSticky.className = 'sticky_layout'
+      tocSticky.appendChild(toc)
+      aside.appendChild(tocSticky)
+    }
   }
 
   ready(mount)

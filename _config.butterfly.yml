@@ -328,7 +328,7 @@ aside:
   button: true
   mobile: true
   # Position: left / right
-  position: left
+  position: right
   display:
     archive: true
     tag: true
@@ -1113,7 +1113,7 @@ inject:
     - <link rel="stylesheet" href="/css/custom.css?v=4">
   bottom:
     # 侧边栏卡片（导航 / 天气 / 日历，PBlog 毛玻璃风格）
-    - <script src="/js/pblog-sidebar.js"></script>
+    - <script src="/js/pblog-sidebar.js?v=2"></script>
     # 音乐播放器（悬浮迷你播放器，自动播放 source/music/ 目录下的音频）
     - <script src="/js/music-player.js"></script>
     # 看板娘（暂时关闭，需要时取消注释即可）
