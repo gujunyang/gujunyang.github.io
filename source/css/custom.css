@@ -36,3 +36,268 @@
 [data-theme='dark'] #footer .footer-runtime-heart {
   color: #7ec6ef !important;
 }
+
+/* ===================== 音乐播放器（PBlog 悬浮迷你样式） ===================== */
+.bp-player {
+  --bp-accent: #49b1f5;
+  --bp-accent-deep: #2b8fd4;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
+  width: 300px;
+  max-width: calc(100vw - 24px);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+.bp-player__card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 14px 40px rgba(43, 143, 212, 0.22);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.bp-player__card:hover {
+  box-shadow: 0 18px 48px rgba(43, 143, 212, 0.3);
+}
+
+.bp-player__card.is-dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+[data-theme='dark'] .bp-player__card {
+  background: rgba(30, 41, 59, 0.82);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.42);
+}
+
+/* 旋转唱片封面 */
+.bp-player__disc {
+  position: relative;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  background: linear-gradient(135deg, #49b1f5, #6a77f0);
+  box-shadow: 0 4px 12px rgba(43, 143, 212, 0.35);
+  animation: bp-spin 12s linear infinite;
+  animation-play-state: paused;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bp-player.is-playing .bp-player__disc {
+  animation-play-state: running;
+}
+
+.bp-player__cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bp-player__fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.bp-player__fallback svg {
+  width: 16px;
+  height: 16px;
+}
+
+.bp-player__disc.has-cover .bp-player__fallback {
+  display: none;
+}
+
+.bp-player__hole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+[data-theme='dark'] .bp-player__disc {
+  border-color: rgba(148, 163, 184, 0.6);
+}
+
+/* 信息区 */
+.bp-player__info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.bp-player__title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1f2d3d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bp-player__artist {
+  margin: 1px 0 0;
+  font-size: 11px;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-theme='dark'] .bp-player__title {
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .bp-player__artist {
+  color: #94a3b8;
+}
+
+/* 进度条 */
+.bp-player__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.bp-player__time {
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+  color: #94a3b8;
+  flex: 0 0 auto;
+}
+
+.bp-player__range {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1 1 auto;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.35);
+  outline: none;
+  cursor: pointer;
+  touch-action: auto;
+}
+
+.bp-player__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bp-accent);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(43, 143, 212, 0.5);
+  cursor: pointer;
+}
+
+.bp-player__range::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--bp-accent);
+  cursor: pointer;
+}
+
+/* 控制按钮 */
+.bp-player__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.bp-player__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease, color 0.25s ease;
+  touch-action: auto;
+}
+
+.bp-player__btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.bp-player__btn--play {
+  background: var(--bp-accent);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(43, 143, 212, 0.4);
+}
+
+.bp-player__btn--play:hover {
+  background: var(--bp-accent-deep);
+  transform: scale(1.06);
+}
+
+.bp-player__btn--next {
+  background: rgba(148, 163, 184, 0.25);
+  color: #475569;
+}
+
+.bp-player__btn--next:hover {
+  background: var(--bp-accent);
+  color: #fff;
+  transform: scale(1.06);
+}
+
+[data-theme='dark'] .bp-player__btn--next {
+  background: rgba(148, 163, 184, 0.18);
+  color: #cbd5e1;
+}
+
+@keyframes bp-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+  .bp-player {
+    right: 12px;
+    bottom: 12px;
+    width: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bp-player__disc {
+    animation: none !important;
+  }
+}
