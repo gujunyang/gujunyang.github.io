@@ -2,7 +2,7 @@
   'use strict'
 
   var STORAGE_KEY = 'blog-music-player'
-  var DEFAULT_VOLUME = 0.5
+  var DEFAULT_VOLUME = 0.3
 
   var ICONS = {
     play: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>',
