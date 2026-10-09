@@ -328,13 +328,13 @@ aside:
   button: true
   mobile: true
   # Position: left / right
-  position: right
+  position: left
   display:
     archive: true
     tag: true
     category: true
   card_author:
-    enable: true
+    enable: false
     description:
     button:
       enable: true
@@ -342,10 +342,10 @@ aside:
       text: Follow Me
       link: https://github.com/gujunyang
   card_announcement:
-    enable: true
+    enable: false
     content: This is my Blog
   card_recent_post:
-    enable: true
+    enable: false
     # If set 0 will show all
     limit: 5
     # Sort: date / updated
@@ -359,14 +359,14 @@ aside:
     storage: 10
     avatar: true
   card_categories:
-    enable: true
+    enable: false
     # If set 0 will show all
     limit: 8
     # Choose: none / true / false
     expand: none
     sort_order:
   card_tags:
-    enable: true
+    enable: false
     # If set 0 will show all
     limit: 40
     color: false
@@ -377,7 +377,7 @@ aside:
     order: 1
     sort_order:
   card_archives:
-    enable: true
+    enable: false
     # Type: monthly / yearly
     type: monthly
     # Eg: YYYY年MM月
@@ -388,7 +388,7 @@ aside:
     limit: 8
     sort_order:
   card_post_series:
-    enable: true
+    enable: false
     # The title shows the series name
     series_title: false
     # Order by title or date
@@ -396,7 +396,7 @@ aside:
     # Sort of order. 1, asc for ascending; -1, desc for descending
     order: -1
   card_webinfo:
-    enable: true
+    enable: false
     post_count: true
     last_push_date: true
     sort_order:
@@ -1110,8 +1110,10 @@ inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
     # 自定义样式（页脚玻璃效果、音乐播放器等）
-    - <link rel="stylesheet" href="/css/custom.css?v=3">
+    - <link rel="stylesheet" href="/css/custom.css?v=4">
   bottom:
+    # 侧边栏卡片（导航 / 天气 / 日历，PBlog 毛玻璃风格）
+    - <script src="/js/pblog-sidebar.js"></script>
     # 音乐播放器（悬浮迷你播放器，自动播放 source/music/ 目录下的音频）
     - <script src="/js/music-player.js"></script>
     # 看板娘（暂时关闭，需要时取消注释即可）
@@ -1215,7 +1217,7 @@ swiper:
 # hexo-butterfly-clock-anzhiyu (侧边栏电子钟)
 # see https://anzhiy.cn/posts/fc18.html
 electric_clock:
-  enable: true
+  enable: false
   priority: 5
   enable_page: all
   exclude:
